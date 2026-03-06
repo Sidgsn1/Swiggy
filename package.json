@@ -1,0 +1,28 @@
+{
+  "name": "swiggy-app",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Sidgsn1/Swiggy#readme",
+  "bugs": {
+    "url": "https://github.com/Sidgsn1/Swiggy/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sidgsn1/Swiggy.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  }
+}
