@@ -116,6 +116,26 @@ width: 100%;
 /* background-color: red; */
 padding: 12px 0;
 }
+/* filter buttons css */
+.sort-by{
+    width: 100%;
+    /* background-color: crimson; */
+    padding: 22px 0;
+}
+.filter-top-btn{
+    padding: 9px 18px;
+    border-radius: 999px;
+    border: 1px solid #d4d5d9;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.filter-top-btn h3{
+    font-family: gilroy;
+    font-size: 14px;
+    font-weight: 600;
+    color: #3d4152;
+}
 
 .res-container-body {
     flex-wrap: wrap;
