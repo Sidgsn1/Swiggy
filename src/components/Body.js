@@ -48,8 +48,18 @@ const Body = () => {
     <div className="res-container">
       <div className="res-container-head">
         <h1>Restaurants with online food delivery in Delhi</h1>
+ 
         <div className="sort-by">
+          <div className="search-bar">
+          <input type="text"  placeholder="search for restaurants and food"/>
+          <button onClick={()=>{
+            
+          }}>
+            <i className="ri-search-2-line"></i>
+          </button>
+        </div>
             <button className='filter-top-btn' onClick={handleFilter}><h3>{isFiltered ?"Show All":"Ratings 4.0+"}</h3></button>
+
         </div>
       </div>
 

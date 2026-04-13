@@ -10,16 +10,6 @@ const Header = () => {
       </div>
 
       <div className="nav-items">
-        <div className="search-bar">
-          <input
-            type="text"
-            placeholder="search for restaurants and food"
-          />
-          <a href="">
-            <i className="ri-search-2-line"></i>
-          </a>
-        </div>
-
         <div className="nav-btn">
           <a href="">
             <i className="ri-user-3-fill"></i> Sign In
