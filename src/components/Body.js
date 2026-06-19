@@ -7,15 +7,16 @@ import Shimmer from './Shimmer';
 
 const Body = () => {
   //creating a useState hook
-
-  // const [resList,setResList]=useState([]); //ise hatao
-  
   const [allResList,setAllResList]=useState([]); //used to store all resList original when clicking showall
   
   const [isRatingFilterOn,setIsRatingFilterOn]=useState(false);
 
+  const [isVegFilterOn,setIsVegFilterOn]=useState(false);
+
+  const [isNonVegFilterOn,setIsNonVegFilterOn]=useState(false);
+
   const [searchText,setSearchText]=useState("");
-  // console.log(resList)  //isse hatao
+  console.log(allResList)  
 
   useEffect(()=>{
     fetchData();
@@ -38,8 +39,6 @@ const Body = () => {
     //now that i got the restaurants obj now i will setResList
     console.log(restaurantCards.card.card.gridElements.infoWithStyle.restaurants.length);
 
-    // setResList(restaurants);  //isse hatao
-
     setAllResList(restaurants);
   }
   
@@ -52,12 +51,23 @@ const Body = () => {
     
     const matchesRating=!isRatingFilterOn || res.info.avgRating > 4.3;
 
-    return matchesSearch && matchesRating;
+    const matchesFoodType =
+      (!isVegFilterOn && !isNonVegFilterOn) ||
+      (isVegFilterOn && res.info.veg === true) ||
+      (isNonVegFilterOn && res.info.veg !== true);
+
+    return matchesSearch && matchesRating && matchesFoodType;
   })
 
 
   const toggleRatingFilter=()=>{
     setIsRatingFilterOn((prev)=>!prev);
+  }
+  const toggleVegFilter=()=>{
+    setIsVegFilterOn((prev)=>!prev);
+  }
+  const toggleNonVegFilter=()=>{
+    setIsNonVegFilterOn((prev)=>!prev);
   }
 
   return allResList.length==0?<Shimmer /> : (
@@ -77,6 +87,8 @@ const Body = () => {
           </button>
         </div>
             <button className='filter-top-btn' onClick={toggleRatingFilter}><h3>{isRatingFilterOn?"Show All":"Ratings 4.0+"}</h3></button>
+            <button className='filter-top-btn' onClick={toggleVegFilter}><h3>{isVegFilterOn?"Show All":"Veg"}</h3></button>
+            <button className='filter-top-btn' onClick={toggleNonVegFilter}><h3>{isNonVegFilterOn?"Show All":"Non-Veg"}</h3></button>
 
         </div>
       </div>

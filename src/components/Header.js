@@ -11,6 +11,7 @@ const Header = () => {
 
       <div className="nav-items">
         <div className="nav-btn">
+          <a href='/about'>About</a>
           <a href="">
             <i className="ri-user-3-fill"></i> Sign In
           </a>
